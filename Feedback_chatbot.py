@@ -10,8 +10,8 @@ import streamlit as st
 from streamlit_feedback import streamlit_feedback
 import time
 
-st.set_page_config(page_title="LangChain: Simple feedback", page_icon="🦜")
-st.title("🦜 LangChain: Simple feedback")
+st.set_page_config(page_title="Simple feedback chatbot with OpenAI", page_icon="")
+st.title("Simple feedback chatbot with OpenAI")
 
 openai_api_key = st.secrets.get("OPENAI_API_KEY")
 if not openai_api_key:
@@ -62,7 +62,7 @@ def get_run_url(run_id):
 
 if st.session_state.get("last_run"):
     run_url = get_run_url(st.session_state.last_run)
-    st.sidebar.markdown(f"[Latest Trace: 🛠️]({run_url})")
+    st.sidebar.markdown(f"[Latest Trace on langsmith: 🛠️]({run_url})")
     feedback = streamlit_feedback(
         feedback_type="faces",
         optional_text_label="[Optional] Please provide an explanation",
